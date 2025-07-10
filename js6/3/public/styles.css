@@ -1,0 +1,80 @@
+/* public/styles.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    padding: 1rem; /* Añadimos padding para que el contenido no toque los bordes en móvil */
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; /* El contenedor ocupa el 100% del espacio disponible */
+    max-width: 500px; /* Pero nunca será más grande que 500px */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Tamaño de fuente base para el título */
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#userList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#userList li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+#userList li:last-child {
+    border-bottom: none;
+}
+
+/* --- ZONA RESPONSIVE --- */
+/* Estos estilos se aplicarán solo si la pantalla tiene 600px de ancho o menos */
+@media (max-width: 600px) {
+    body {
+        /* Centramos el contenido en la parte superior en móviles */
+        display: block; 
+    }
+
+    .container {
+        /* Reducimos el padding en pantallas pequeñas para dar más espacio */
+        padding: 1.5rem 1rem; 
+    }
+
+    h1 {
+        /* Hacemos el título un poco más pequeño en móviles */
+        font-size: 1.75rem; 
+    }
+}

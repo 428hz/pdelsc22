@@ -1,0 +1,111 @@
+/* --- Estilos Generales (para Escritorio y Base) --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #1d2129;
+    font-size: 2em; /* Tamaño de fuente relativo */
+}
+
+.actions {
+    display: flex; /* Hacemos que los botones estén en línea */
+    justify-content: center; /* Centramos los botones */
+    gap: 15px; /* Espacio entre los botones */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no hay espacio */
+}
+
+button {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Evita que los botones se encojan */
+}
+
+button:hover {
+    background-color: #166fe5;
+}
+
+#user-container {
+    width: 90%;
+    max-width: 800px;
+    display: grid;
+    /* Esta línea es la clave del diseño de tarjetas adaptable */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.user-card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #1877f2;
+}
+
+.user-card p {
+    margin-bottom: 0;
+    color: #606770;
+    word-wrap: break-word; /* Asegura que emails largos no rompan el diseño */
+}
+
+
+/* --- Media Query para Celulares --- */
+/* Estos estilos se aplicarán solo si el ancho de la pantalla es de 600px o menos */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Menos espacio en los bordes */
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Título un poco más pequeño */
+    }
+
+    .actions {
+        flex-direction: column; /* Apilamos los botones verticalmente */
+        width: 100%;
+        align-items: stretch; /* Hacemos que los botones ocupen todo el ancho */
+    }
+
+    /* Hacemos que las tarjetas ocupen una sola columna y sean más simples */
+    #user-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}

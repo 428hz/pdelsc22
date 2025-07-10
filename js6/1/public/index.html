@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtener Usuarios con API</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Obtener Datos de Usuarios</h1>
+        <p>Haz clic en los botones para traer los datos usando diferentes métodos. La página no se recargará (AJAX).</p>
+    </header>
+
+    <main>
+        <div class="actions">
+            <button id="fetch-btn">Obtener con Fetch</button>
+            <button id="axios-btn">Obtener con Axios</button>
+        </div>
+
+        <div id="user-container">
+            </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
