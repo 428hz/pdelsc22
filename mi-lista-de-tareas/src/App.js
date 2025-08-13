@@ -31,7 +31,12 @@ function App() {
     setTasks(updatedtasks);
   };
 
-  const downloadtasks = () => {
+ const downloadtasks = () => {
+    if (tasks.length === 0) {
+      alert('che, primero tenés que crear al menos una tarea para descargar la lista.');
+      return; 
+    }
+    
     const data = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(tasks, null, 2))}`;
     const link = document.createElement('a');
     link.href = data;

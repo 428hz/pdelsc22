@@ -9,21 +9,23 @@ function CreatePage({ onaddtask }) {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    if (!title.trim()) {
-      alert('che, no te olvides del título.');
+
+    if (title.trim().length < 3) {
+      alert('el título es muy corto, che. ponele un poco más de onda.');
       return;
     }
+
     onaddtask({ title, description, status });
     navigate('/');
   };
 
   return (
-    <div className="card">
-      <div className="card-header">
+    <div className="card border-0">
+      <div className="card-header bg-transparent border-bottom-0 pt-3">
         <h3>crear una nueva tarea</h3>
       </div>
       <div className="card-body">
-        <form onSubmit={handlesubmit}>
+        <form onSubmit={handlesubmit} noValidate>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">título</label>
             <input
@@ -33,6 +35,7 @@ function CreatePage({ onaddtask }) {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
+              minLength="3"
             />
           </div>
           <div className="mb-3">
@@ -43,6 +46,7 @@ function CreatePage({ onaddtask }) {
               rows="3"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              maxLength="200"
             ></textarea>
           </div>
           <div className="mb-3 form-check">
@@ -53,11 +57,14 @@ function CreatePage({ onaddtask }) {
               checked={status === 'completa'}
               onChange={(e) => setStatus(e.target.checked ? 'completa' : 'incompleta')}
             />
-            <label className="form-check-label" htmlFor="status">¿está completa?</label>
+            <label className="form-check-label" htmlFor="status">marcar como completa</label>
           </div>
-          <div className="d-flex justify-content-end">
-             <Link to="/" className="btn btn-outline-secondary me-2">cancelar</Link>
-             <button type="submit" className="btn btn-primary">agregar tarea</button>
+          <div className="d-flex justify-content-end gap-2">
+             <Link to="/" className="btn btn-outline-secondary">cancelar</Link>
+             <button type="submit" className="btn btn-primary d-flex align-items-center gap-2">
+                <i className="bi bi-plus-lg"></i>
+                agregar tarea
+             </button>
           </div>
         </form>
       </div>
