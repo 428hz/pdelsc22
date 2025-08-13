@@ -1,0 +1,66 @@
+/* acá le damos estilos al contenedor principal de toda la app */
+#root {
+  /* con esto le ponemos un ancho máximo, para que no se haga gigante en pantallas muy anchas */
+  max-width: 1280px;
+  /* este es el truco para centrar el bloque en el medio de la página */
+  margin: 0 auto;
+  /* un poco de relleno para que las cosas no se peguen a los bordes */
+  padding: 2rem;
+  /* y que todo el texto adentro esté centrado por defecto */
+  text-align: center;
+}
+
+/* estilos para los logos de vite y react */
+.logo {
+  /* definimos la altura de los logos */
+  height: 6em;
+  /* un relleno para que el logo no esté pegado a su borde */
+  padding: 1.5em;
+  /* esto le avisa al navegador que vamos a animar el filtro, para que ande más fluido */
+  will-change: filter;
+  /* y acá le decimos que la transición del filtro sea suave, que dure 300 milisegundos */
+  transition: filter 300ms;
+}
+/* cuando pasás el mouse por encima del logo de vite */
+.logo:hover {
+  /* le aplicamos una sombrita con el color azul de vite */
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+/* y cuando pasás el mouse por encima del logo que además tiene la clase react */
+.logo.react:hover {
+  /* le ponemos la sombrita pero con el color celeste de react */
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* acá definimos una animación que se llama logo-spin */
+@keyframes logo-spin {
+  /* le decimos que empiece sin rotación */
+  from {
+    transform: rotate(0deg);
+  }
+  /* y que termine dando una vuelta completa de 360 grados */
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* esta es una regla especial para accesibilidad */
+@media (prefers-reduced-motion: no-preference) {
+  /* solo si el usuario no tiene desactivadas las animaciones en su sistema operativo... */
+  a:nth-of-type(2) .logo {
+    /* ...le decimos al segundo logo, el de react, que use la animación que creamos arriba */
+    /* y que la repita en bucle infinito, que dure 20 segundos y que sea a velocidad constante */
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* esto le da estilo al botón del contador que viene de ejemplo */
+.card {
+  /* le ponemos un relleno para que sea más grandote */
+  padding: 2em;
+}
+
+/* y esto le da un color grisecito al texto de abajo del todo */
+.read-the-docs {
+  color: #888;
+}

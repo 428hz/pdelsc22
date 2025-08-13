@@ -1,0 +1,23 @@
+/* para el html, el body y el div root, le decimos que ocupen el 100% de la pantalla */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  /* y les sacamos los margenes y rellenos que a veces ponen los navegadores por defecto */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* un fondo gris muy suave */
+  background-color: #e9ecef; 
+  /* y una letra simple para toda la página */
+  font-family: sans-serif;
+}
+
+/* este es el div donde vive toda la magia de react */
+#root {
+  /* con estas tres líneas hacemos el truco para centrar todo en el medio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,31 @@
+/* regla de reseteo: asegura que los contenedores principales (html, body, 
+  y el div #root de react) ocupen el 100% del alto y ancho de la pantalla.
+*/
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  /* elimina los márgenes y rellenos que los navegadores aplican por defecto. */
+  margin: 0;
+  padding: 0;
+}
+
+/* estilos para el cuerpo (body) de la página. */
+body {
+  /* establece un color de fondo gris claro para toda la página. */
+  background-color: #e9ecef;
+  /* define una fuente estándar y legible para todo el texto. */
+  font-family: sans-serif;
+}
+
+/* estilos para el div con id="root", que es donde se renderiza la aplicación de React.
+*/
+#root {
+  /* utiliza flexbox para controlar el alineamiento de su contenido. */
+  display: flex;
+  /* centra el contenido horizontalmente. */
+  justify-content: center;
+  /* centra el contenido verticalmente. */
+  align-items: center;
+  /* añade un relleno para que el contenido no se pegue a los bordes de la pantalla. */
+  padding: 20px;
+}

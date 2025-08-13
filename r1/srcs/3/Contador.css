@@ -1,0 +1,64 @@
+/* la caja grandota que tiene todo el contador adentro */
+.contador-container {
+  /* un fondito blanco */
+  background-color: white;
+  /* un borde finito color gris */
+  border: 1px solid #ddd;
+  /* bordes bien redondeados */
+  border-radius: 12px;
+  /* un relleno para que no esté todo apretado */
+  padding: 30px;
+  /* centramos el texto */
+  text-align: center;
+  /* un ancho fijo */
+  width: 320px;
+  /* una letra simple */
+  font-family: sans-serif;
+  /* una sombrita para que parezca que flota en la página */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* el número grandote del medio */
+.contador-display {
+  /* un tamaño de letra bien zarpado para que se vea de lejos */
+  font-size: 5em;
+  /* un color de texto oscuro */
+  color: #282c34;
+  /* un margen abajo para separarlo de los botones */
+  margin: 0 0 25px 0;
+}
+
+/* los botones de sumar y restar */
+.contador-botones button {
+  /* un fondo azul para que se destaquen */
+  background-color: #007bff;
+  /* le sacamos el borde feo que traen por defecto */
+  border: none;
+  /* letra blanca */
+  color: white;
+  /* un buen tamaño con relleno */
+  padding: 12px 24px;
+  /* un espacio entre los dos botones */
+  margin: 0 10px;
+  /* bordes un poco redondeados */
+  border-radius: 5px;
+  /* tamaño y peso de la letra */
+  font-size: 1em;
+  font-weight: bold;
+  /* que el cursor se haga una manito cuando pasás por encima */
+  cursor: pointer;
+  /* una transición suave para los efectos de color y tamaño */
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+/* el estilo para cuando pasás el mouse por encima del botón */
+.contador-botones button:hover {
+  /* se pone de un azul un poco más oscuro */
+  background-color: #0056b3;
+}
+
+/* el estilo para cuando hacés clic y mantenés apretado el botón */
+.contador-botones button:active {
+  /* se achica un poquito para que parezca que lo estás presionando de verdad */
+  transform: scale(0.95);
+}

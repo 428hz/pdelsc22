@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Swal from 'sweetalert2'; 
+import withReactContent from 'sweetalert2-react-content'; 
+const MySwal = withReactContent(Swal);
 
 function CreatePage({ onaddtask }) {
   const [title, setTitle] = useState('');
@@ -10,8 +13,14 @@ function CreatePage({ onaddtask }) {
   const handlesubmit = (e) => {
     e.preventDefault();
 
-    if (title.trim().length < 3) {
-      alert('el título es muy corto, che. ponele un poco más de onda.');
+     if (title.trim().length < 2) {
+     
+      MySwal.fire({
+        title: <p>¡upa!</p>,
+        html: <p>el título es muy corto, che. ponele un poco más de onda.</p>,
+        icon: 'warning',
+        confirmButtonColor: '#0d6efd' 
+      });
       return;
     }
 

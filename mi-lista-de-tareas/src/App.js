@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/homepage';
 import DetailPage from './components/detailpage';
 import CreatePage from './components/createpage';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -31,12 +35,17 @@ function App() {
     setTasks(updatedtasks);
   };
 
- const downloadtasks = () => {
+  const downloadtasks = () => {
     if (tasks.length === 0) {
-      alert('che, primero tenés que crear al menos una tarea para descargar la lista.');
-      return; 
+      MySwal.fire({
+        title: 'un momento...',
+        text: 'primero tenés que crear al menos una tarea para descargar la lista.',
+        icon: 'info',
+        confirmButtonColor: '#0d6efd'
+      });
+      return;
     }
-    
+
     const data = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(tasks, null, 2))}`;
     const link = document.createElement('a');
     link.href = data;
@@ -44,6 +53,15 @@ function App() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const toggletaskstatus = (id) => {
+    setTasks(tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, status: task.status === 'completa' ? 'incompleta' : 'completa' };
+      }
+      return task;
+    }));
   };
 
   return (
@@ -54,8 +72,9 @@ function App() {
             <div className="card-body">
               <h1 className="mb-4 text-center display-4">lista de tareas</h1>
               <Routes>
-                <Route path="/" element={<HomePage tasks={tasks} ondownload={downloadtasks} ondeletetask={deletetask} />} />
-                <Route path="/task/:id" element={<DetailPage tasks={tasks} ondeletetask={deletetask} />} />
+                <Route path="/" element={<HomePage tasks={tasks} ondownload={downloadtasks} ondeletetask={deletetask} ontogglestatus={toggletaskstatus} />} />
+                {/* la línea importante que seguramente te falta corregir es esta: */}
+                <Route path="/task/:id" element={<DetailPage tasks={tasks} ondeletetask={deletetask} ontogglestatus={toggletaskstatus} />} />
                 <Route path="/create" element={<CreatePage onaddtask={addtask} />} />
               </Routes>
             </div>

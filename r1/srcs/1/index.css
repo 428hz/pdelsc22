@@ -1,0 +1,121 @@
+/* :root define variables y estilos globales para toda la página. es como la base de todo. */
+:root {
+  /* define la lista de fuentes a usar, empezando por la fuente del sistema del usuario. */
+  font-family: system-ui, avenir, helvetica, arial, sans-serif;
+  /* define el espacio entre líneas de texto. 1.5 significa 1.5 veces el tamaño de la fuente. */
+  line-height: 1.5;
+  /* define el grosor de la fuente. 400 es el peso normal. */
+  font-weight: 400;
+
+  /* le dice al navegador que la página soporta un tema claro y uno oscuro. */
+  color-scheme: light dark;
+  /* este es el color de texto por defecto para el modo oscuro. es un blanco con algo de transparencia. */
+  color: rgba(255, 255, 255, 0.87);
+  /* este es el color de fondo por defecto para el modo oscuro. */
+  background-color: #242424;
+
+  /* estas son propiedades para que las fuentes se vean más prolijas y nítidas en la pantalla. */
+  font-synthesis: none;
+  text-rendering: optimizeligibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* estilos para los enlaces (etiquetas <a>) */
+a {
+  /* los links van a ser un poco más gruesos que el texto normal. */
+  font-weight: 500;
+  /* color base de los links. */
+  color: #646cff;
+  /* saca el subrayado por defecto de los links. */
+  text-decoration: inherit;
+}
+
+/* esto se activa cuando pasás el mouse por encima de un link. */
+a:hover {
+  /* cambia el color del link a un tono más oscuro. */
+  color: #535bf2;
+}
+
+/* estilos para el cuerpo de la página */
+body {
+  /* saca el margen que los navegadores suelen poner por defecto. */
+  margin: 0;
+  /* usamos flexbox para poder centrar el contenido fácilmente. */
+  display: flex;
+  /* ¡¡¡ojo acá, este puede ser el error!!! 'place-items: center' es un atajo que funciona perfecto en 'display: grid', */
+  /* pero en 'display: flex' a veces no centra el contenido horizontalmente como uno espera. */
+  /* para asegurar el centrado en flexbox, lo más común y seguro es usar dos propiedades separadas: */
+  /* 'align-items: center;' para el centrado vertical y 'justify-content: center;' para el horizontal. */
+  place-items: center;
+  /* asegura que la página tenga un ancho mínimo, útil para celulares. */
+  min-width: 320px;
+  /* asegura que la página ocupe al menos el 100% del alto de la pantalla. */
+  min-height: 100vh;
+}
+
+/* estilos para el título principal */
+h1 {
+  /* un tamaño de letra bien grande para el título. */
+  font-size: 3.2em;
+  /* un interlineado un poco más ajustado que el normal para que se vea mejor en títulos grandes. */
+  line-height: 1.1;
+}
+
+/* estilos generales para los botones */
+button {
+  /* bordes redondeados. */
+  border-radius: 8px;
+  /* por defecto, el borde es transparente y de 1px. */
+  border: 1px solid transparent;
+  /* espaciado interno para que el texto no quede pegado a los bordes. */
+  padding: 0.6em 1.2em;
+  /* tamaño de fuente del botón. */
+  font-size: 1em;
+  /* el texto del botón es un poco más grueso. */
+  font-weight: 500;
+  /* hereda la misma familia de fuentes que el resto de la página para mantener la consistencia. */
+  font-family: inherit;
+  /* color de fondo del botón para el modo oscuro. */
+  background-color: #1a1a1a;
+  /* el cursor se convierte en una manito para indicar que se puede hacer click. */
+  cursor: pointer;
+  /* agrega una transición suave cuando cambia el color del borde, para que no sea un cambio brusco. */
+  transition: border-color 0.25s;
+}
+
+/* cuando pasás el mouse por encima del botón... */
+button:hover {
+  /* ...el borde cambia al color de los links. */
+  border-color: #646cff;
+}
+
+/* esto es por accesibilidad: cuando navegás con el teclado y seleccionás un botón... */
+button:focus,
+button:focus-visible {
+  /* ¡¡¡cuidado con esto, puede ser el otro error!!! '-webkit-focus-ring-color' no es un estándar y solo funciona */
+  /* en navegadores basados en webkit (como chrome, safari, edge). en firefox, por ejemplo, no funciona. */
+  /* esto puede hacer que el contorno del botón se vea diferente o no se vea en algunos navegadores. */
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* acá empieza la magia: estilos que solo se aplican si el usuario tiene el modo claro activado en su sistema operativo o navegador. */
+@media (prefers-color-scheme: light) {
+  /* si estamos en modo claro, sobreescribimos los colores definidos al principio. */
+  :root {
+    /* el texto ahora es oscuro. */
+    color: #213547;
+    /* y el fondo es blanco. */
+    background-color: #ffffff;
+  }
+
+  /* ajustamos también el color del hover de los links para que se vea bien en el fondo claro. */
+  a:hover {
+    color: #747bff;
+  }
+
+  /* y el color de fondo de los botones también se cambia para el modo claro. */
+  button {
+    background-color: #f9f9f9;
+  }
+}

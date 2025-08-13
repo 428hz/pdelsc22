@@ -1,9 +1,9 @@
-// src/components/homepage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Task from './task';
 
-function HomePage({ tasks, ondownload, ondeletetask }) {
+// 1. acá le decimos que reciba la función
+function HomePage({ tasks, ondownload, ondeletetask, ontogglestatus }) {
   return (
     <div>
       <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4">
@@ -21,7 +21,8 @@ function HomePage({ tasks, ondownload, ondeletetask }) {
       </div>
       <div className="list-group">
         {tasks.length > 0 ? (
-          tasks.map(t => <Task key={t.id} task={t} ondeletetask={ondeletetask} />)
+          // 2. y acá se la pasamos a cada tarea hija
+          tasks.map(t => <Task key={t.id} task={t} ondeletetask={ondeletetask} ontogglestatus={ontogglestatus} />)
         ) : (
           <div className="alert alert-info text-center">
             <i className="bi bi-check2-circle me-2"></i>

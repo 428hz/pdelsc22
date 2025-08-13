@@ -1,0 +1,85 @@
+/* --- el contenedor principal del formulario --- */
+.form-container {
+  /* color de fondo blanco */
+  background: white;
+  /* un poco de espacio interior para que no quede todo pegado */
+  padding: 40px;
+  /* bordes redondeados */
+  border-radius: 8px;
+  /* una sombrita para que parezca que flota */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* que ocupe todo el ancho posible */
+  width: 100%;
+  /* pero con un límite de 400px para que no se estire demasiado en pantallas grandes */
+  max-width: 400px;
+  /* centramos el texto adentro */
+  text-align: center;
+  /* una letra simple y legible */
+  font-family: sans-serif;
+}
+
+/* --- el texto que está arriba del campo de texto, o sea la etiqueta --- */
+.form-container label {
+  /* hace que la etiqueta ocupe su propia línea */
+  display: block;
+  /* un margen abajo para separarla del input */
+  margin-bottom: 10px;
+  /* letra en negrita */
+  font-weight: bold;
+  /* un color de texto oscuro */
+  color: #333;
+}
+
+/* --- el campo para escribir el nombre --- */
+.form-container input {
+  /* que ocupe el 90% del contenedor para dejar un aire a los costados */
+  width: 90%;
+  /* espacio interior para que el texto no se pegue a los bordes */
+  padding: 12px;
+  /* un borde gris simple */
+  border: 2px solid #ccc;
+  /* bordes redondeados, igual que el contenedor principal */
+  border-radius: 4px;
+  /* tamaño de la letra */
+  font-size: 1rem;
+  /* un margen abajo para separarlo del botón */
+  margin-bottom: 20px;
+}
+
+/* --- el botón de enviar --- */
+.form-container button {
+  /* que ocupe el 100% del ancho del contenedor */
+  width: 100%;
+  /* espacio interior */
+  padding: 12px;
+  /* le sacamos el borde que trae por defecto */
+  border: none;
+  /* fondo azul */
+  background-color: #007bff;
+  /* texto blanco */
+  color: white;
+  /* tamaño de letra un poco más grande */
+  font-size: 1.1rem;
+  /* texto en negrita */
+  font-weight: bold;
+  /* bordes redondeados */
+  border-radius: 4px;
+  /* que el cursor del mouse se transforme en una manito al pasar por encima */
+  cursor: pointer;
+  /* una transición suave para el cambio de color del hover */
+  transition: background-color 0.3s;
+}
+
+/* --- el estilo del botón cuando pasás el mouse por encima --- */
+.form-container button:hover {
+  /* se pone de un azul un poco más oscuro */
+  background-color: #0056b3;
+}
+
+/* --- el mensaje de bienvenida que aparece al final --- */
+.welcome-message {
+  /* un margen arriba para separarlo del formulario */
+  margin-top: 30px;
+  /* color verde */
+  color: #28a745;
+}

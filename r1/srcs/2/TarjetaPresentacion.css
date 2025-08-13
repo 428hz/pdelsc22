@@ -1,0 +1,68 @@
+/* la caja principal de la tarjeta */
+.tarjeta {
+  /* un fondo blanco para que resalte */
+  background-color: white;
+  /* bordes redondeados para que no sea tan tosco */
+  border-radius: 15px;
+  /* una sombrita para que parezca que flota */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* usamos flex para acomodar la foto y el texto */
+  display: flex;
+  /* en columna o sea uno arriba del otro */
+  flex-direction: column;
+  /* y centramos todo horizontalmente */
+  align-items: center;
+  /* un relleno para que no esté todo apretado */
+  padding: 25px;
+  /* un ancho fijo para que todas las tarjetas sean iguales */
+  width: 250px;
+  /* una letra simple */
+  font-family: sans-serif;
+  /* una transición suavecita para cuando le pasás el mouse por encima */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* el efecto cuando le pasás el mouse por encima */
+.tarjeta:hover {
+  /* la levantamos un poquito para que se note */
+  transform: translateY(-5px);
+  /* y le agrandamos un toque la sombra */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* la foto del personaje */
+.tarjeta-imagen {
+  /* le damos un tamaño fijo */
+  width: 140px;
+  height: 140px;
+  /* con esto la hacemos redonda, queda fachero */
+  border-radius: 50%;
+  /* esto es clave, hace que la foto rellene el círculo sin deformarse */
+  object-fit: cover;
+  /* un espacio para separarla del texto de abajo */
+  margin-bottom: 20px;
+  /* y un bordecito azul para decorar */
+  border: 5px solid #007bff;
+}
+
+/* el nombre del personaje */
+.tarjeta-info h2 {
+  /* le sacamos los márgenes raros y le ponemos uno abajo */
+  margin: 0 0 5px 0;
+  /* un tamaño de letra más grandecito */
+  font-size: 1.5em;
+  /* y centramos el texto */
+  text-align: center;
+}
+
+/* la profesión */
+.tarjeta-info p {
+  /* le sacamos los márgenes */
+  margin: 0;
+  /* un color gris para que no compita con el nombre */
+  color: #6c757d;
+  /* un tamaño de letra tranqui */
+  font-size: 1.1em;
+  /* y centramos el texto también */
+  text-align: center;
+}
