@@ -1,0 +1,88 @@
+/* la caja principal que envuelve toda la lista de tareas */
+.lista-container {
+  /* un fondito blanco */
+  background-color: white;
+  /* un ancho fijo de 500 pixeles */
+  width: 500px;
+  /* una altura mínima para que no se achique de golpe si no hay tareas */
+  min-height: 400px;
+  /* un relleno para que las cosas no se peguen a los bordes */
+  padding: 30px;
+  /* bordes redondeados */
+  border-radius: 10px;
+  /* una sombrita para que despegue de la página */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  /* una letra simple */
+  font-family: sans-serif;
+}
+
+/* el formulario para agregar tareas nuevas */
+.form-agregar {
+  /* esto pone el campo de texto y el botón uno al lado del otro */
+  display: flex;
+  /* un espacio de 10px entre el input y el botón */
+  gap: 10px;
+  /* un margen abajo para separarlo de la lista de tareas */
+  margin-bottom: 20px;
+}
+
+/* el campo de texto donde escribís la tarea */
+.form-agregar input {
+  /* esto hace que el input ocupe todo el espacio horizontal que sobra */
+  flex-grow: 1;
+  /* relleno adentro del campo */
+  padding: 10px;
+  /* un borde simple y redondeado */
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  /* tamaño de la letra */
+  font-size: 1em;
+}
+
+/* el botón de "agregar" */
+.form-agregar button {
+  padding: 10px 20px;
+  /* un color de fondo verde, como de "listo" o "agregar" */
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  /* que el mouse se ponga en modo manito al pasar por encima */
+  cursor: pointer;
+}
+
+/* la lista de tareas en sí, o sea el ul */
+.lista {
+  /* le sacamos los puntitos que vienen por defecto en las listas */
+  list-style-type: none;
+  /* le sacamos el relleno que a veces le ponen los navegadores */
+  padding: 0;
+}
+
+/* cada una de las tareas de la lista, o sea el li */
+.lista li {
+  padding: 15px;
+  /* un borde finito abajo para separar las tareas entre sí */
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  /* esto es para que no puedas seleccionar el texto con el mouse, queda más prolijo */
+  user-select: none;
+  /* una transición suave para el cambio de color de fondo */
+  transition: background-color 0.2s;
+}
+
+/* el efecto cuando pasás el mouse por encima de una tarea */
+.lista li:hover {
+  background-color: #f8f9fa;
+}
+
+/* el estilo especial para las tareas que ya están terminadas */
+.lista li.completada {
+  /* le ponemos una línea que la tacha */
+  text-decoration: line-through;
+  /* un color de texto gris para que se note menos */
+  color: #888;
+  /* y un color de fondo distinto para que se diferencie */
+  background-color: #e9ecef;
+}

@@ -1,0 +1,26 @@
+/* para el html, el body y el div root, le decimos que ocupen el 100% de la pantalla */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  /* y les sacamos los margenes y rellenos que a veces les manda el navegador de onda */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* un color de fondo gris clarito, tranqui */
+  background-color: #f8f9fa; 
+  /* y la letra sans-serif que se lee bien en todos lados */
+  font-family: sans-serif;
+}
+
+/* este es el div */
+#root {
+  /* con estas tres líneas hacemos el truco para centrar todo en el medio */
+  /* lo hacemos una caja flexible */
+  display: flex;
+  /* lo centramos horizontalmente */
+  justify-content: center;
+  /* y lo centramos verticalmente */
+  align-items: center;
+}
