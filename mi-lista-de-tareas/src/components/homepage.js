@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Task from './task';
 
-// 1. acá le decimos que reciba la función
 function HomePage({ tasks, ondownload, ondeletetask, ontogglestatus }) {
   return (
     <div>
@@ -21,7 +20,6 @@ function HomePage({ tasks, ondownload, ondeletetask, ontogglestatus }) {
       </div>
       <div className="list-group">
         {tasks.length > 0 ? (
-          // 2. y acá se la pasamos a cada tarea hija
           tasks.map(t => <Task key={t.id} task={t} ondeletetask={ondeletetask} ontogglestatus={ontogglestatus} />)
         ) : (
           <div className="alert alert-info text-center">

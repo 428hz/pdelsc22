@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
 const MySwal = withReactContent(Swal);
 
-function CreatePage({ onaddtask }) {
+function EditPage({ tasks, onupdatetask }) {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  
+  const [tasktoedit, setTaskToEdit] = useState(null);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('incompleta');
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    const task = tasks.find(t => t.id === parseInt(id));
+    if (task) {
+      setTaskToEdit(task);
+      setTitle(task.title);
+      setDescription(task.description);
+      setStatus(task.status);
+    } else {
+      navigate('/');
+    }
+  }, [id, tasks, navigate]);
+  
 
   const handlesubmit = (e) => {
     e.preventDefault();
@@ -22,14 +39,18 @@ function CreatePage({ onaddtask }) {
       });
       return;
     }
-    onaddtask({ title, description, status });
-    navigate('/');
+    onupdatetask(tasktoedit.id, { title, description, status });
+    navigate(`/task/${tasktoedit.id}`);
   };
+
+  if (!tasktoedit) {
+    return <p>cargando tarea...</p>; 
+  }
 
   return (
     <div className="card border-0">
       <div className="card-header bg-transparent border-bottom-0 pt-3">
-        <h3>crear una nueva tarea</h3>
+        <h3>editando la tarea: "{tasktoedit.title}"</h3>
       </div>
       <div className="card-body">
         <form onSubmit={handlesubmit} noValidate>
@@ -58,7 +79,7 @@ function CreatePage({ onaddtask }) {
           </div>
           
           <div className="mb-3">
-            <label htmlFor="status" className="form-label">estado inicial</label>
+            <label htmlFor="status" className="form-label">estado</label>
             <select 
               id="status" 
               className="form-select"
@@ -72,10 +93,10 @@ function CreatePage({ onaddtask }) {
           </div>
           
           <div className="d-flex justify-content-end gap-2">
-             <Link to="/" className="btn btn-outline-secondary">cancelar</Link>
+             <Link to={`/task/${id}`} className="btn btn-outline-secondary">cancelar</Link>
              <button type="submit" className="btn btn-primary d-flex align-items-center gap-2">
-                <i className="bi bi-plus-lg"></i>
-                agregar tarea
+                <i className="bi bi-save-fill"></i>
+                guardar cambios
              </button>
           </div>
         </form>
@@ -84,4 +105,4 @@ function CreatePage({ onaddtask }) {
   );
 }
 
-export default CreatePage;
+export default EditPage;

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/homepage';
 import DetailPage from './components/detailpage';
 import CreatePage from './components/createpage';
+import EditPage from './components/editpage'; // <-- no te olvides de este import
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
@@ -13,7 +14,8 @@ function App() {
     const savedtasks = localStorage.getItem('tasks');
     return savedtasks ? JSON.parse(savedtasks) : [
       { id: 1, title: 'hacer las compras', description: 'comprar pan, leche y huevos.', createdate: '2025-08-13', status: 'incompleta' },
-      { id: 2, title: 'terminar el tp de react', description: 'hacer la lista de tareas con react router.', createdate: '2025-08-12', status: 'completa' }
+      { id: 2, title: 'terminar el tp de react', description: 'hacer la lista de tareas con react router.', createdate: '2025-08-12', status: 'completa' },
+      { id: 3, title: 'leer sobre react hooks', description: 'investigar sobre useeffect y usestate.', createdate: '2025-08-11', status: 'en proceso' }
     ];
   });
 
@@ -45,7 +47,6 @@ function App() {
       });
       return;
     }
-
     const data = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(tasks, null, 2))}`;
     const link = document.createElement('a');
     link.href = data;
@@ -58,10 +59,24 @@ function App() {
   const toggletaskstatus = (id) => {
     setTasks(tasks.map(task => {
       if (task.id === id) {
-        return { ...task, status: task.status === 'completa' ? 'incompleta' : 'completa' };
+        let newstatus = 'en proceso';
+        if (task.status === 'incompleta') {
+          newstatus = 'en proceso';
+        } else if (task.status === 'en proceso') {
+          newstatus = 'completa';
+        } else {
+          newstatus = 'incompleta';
+        }
+        return { ...task, status: newstatus };
       }
       return task;
     }));
+  };
+
+  const updatetask = (id, updatedtask) => {
+    setTasks(tasks.map(task => 
+      task.id === id ? { ...task, ...updatedtask, id: task.id } : task
+    ));
   };
 
   return (
@@ -73,9 +88,9 @@ function App() {
               <h1 className="mb-4 text-center display-4">lista de tareas</h1>
               <Routes>
                 <Route path="/" element={<HomePage tasks={tasks} ondownload={downloadtasks} ondeletetask={deletetask} ontogglestatus={toggletaskstatus} />} />
-                {/* la línea importante que seguramente te falta corregir es esta: */}
                 <Route path="/task/:id" element={<DetailPage tasks={tasks} ondeletetask={deletetask} ontogglestatus={toggletaskstatus} />} />
                 <Route path="/create" element={<CreatePage onaddtask={addtask} />} />
+                <Route path="/task/:id/edit" element={<EditPage tasks={tasks} onupdatetask={updatetask} />} />
               </Routes>
             </div>
           </div>
