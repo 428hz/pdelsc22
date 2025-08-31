@@ -1,10 +1,10 @@
-// src/components/Login.jsx
+// src/pages/LoginPage.jsx
 import React, { useState } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../services/supabaseClient';
 import { useNavigate } from 'react-router-dom';
-import styles from './Login.module.css'; // Importamos los nuevos estilos
+import styles from './LoginPage.module.css'; // <-- RUTA Y NOMBRE CORREGIDOS
 
-function Login() {
+function LoginPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -56,4 +56,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;

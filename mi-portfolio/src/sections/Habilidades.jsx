@@ -1,6 +1,6 @@
 // src/components/Habilidades.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../services/supabaseClient';
 import styles from './Habilidades.module.css'; // Importamos los estilos del módulo
 import { motion } from 'framer-motion';
 

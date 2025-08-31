@@ -1,31 +1,16 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { supabase } from './supabaseClient';
+import { supabase } from './services/supabaseClient'; // <- RUTA CORREGIDA
 
-// Importamos TODOS los componentes que vamos a usar
-import Header from './components/Header';
-import Inicio from './components/Inicio';
-import Habilidades from './components/Habilidades';
-import Proyectos from './components/Proyectos';
-import Experiencia from './components/Experiencia';
-import Footer from './components/Footer';
-import Login from './components/Login';
-import Admin from './components/Admin';
+// Importaciones con las nuevas rutas
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import AdminPage from './pages/AdminPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import BotonEditar from './components/BotonEditar';
-
-// Creamos un componente para la página principal
-function PaginaPrincipal() {
-  return (
-    <>
-      <Inicio />
-      <Habilidades />
-      <Proyectos />
-      <Experiencia />
-    </>
-  );
-}
 
 function App() {
   const [session, setSession] = useState(null);
@@ -49,10 +34,10 @@ function App() {
         <BotonEditar session={session} />
         
         <Routes>
-          <Route path="/" element={<PaginaPrincipal />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin" element={<AdminPage />} />
           </Route>
         </Routes>
         

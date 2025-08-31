@@ -1,7 +1,7 @@
 // src/components/GestionarHabilidades.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
-import adminStyles from './Admin.module.css'; // Usamos los estilos compartidos
+import { supabase } from '../services/supabaseClient';
+import adminStyles from '../pages/AdminPage.module.css'; // Usamos los estilos compartidos
 
 function GestionarHabilidades() {
   // ... toda tu lógica de estados y funciones (handleAdd, handleDelete, etc.) se queda igual

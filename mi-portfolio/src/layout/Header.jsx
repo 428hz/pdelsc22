@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../services/supabaseClient';
 import styles from './Header.module.css'; // Importamos los estilos
 
 function Header({ session }) {

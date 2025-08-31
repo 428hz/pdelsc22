@@ -1,11 +1,11 @@
-// src/components/Admin.jsx
+// src/pages/AdminPage.jsx
 import React, { useState } from 'react';
-import GestionarHabilidades from './GestionarHabilidades';
-import GestionarExperiencia from './GestionarExperiencia';
-import GestionarProyectos from './GestionarProyectos'; // 1. Importar el nuevo componente
-import styles from './Admin.module.css';
+import GestionarHabilidades from '../components/GestionarHabilidades';
+import GestionarExperiencia from '../components/GestionarExperiencia';
+import GestionarProyectos from '../components/GestionarProyectos';
+import styles from './AdminPage.module.css'; // <-- RUTA Y NOMBRE CORREGIDOS
 
-function Admin() {
+function AdminPage() {
   const [vista, setVista] = useState('habilidades');
 
   return (
@@ -26,7 +26,6 @@ function Admin() {
         >
           gestionar experiencia
         </button>
-        {/* 2. Agregar el nuevo botón de pestaña */}
         <button 
           onClick={() => setVista('proyectos')}
           className={`${styles.navButton} ${vista === 'proyectos' ? styles.active : ''}`}
@@ -35,7 +34,6 @@ function Admin() {
         </button>
       </nav>
 
-      {/* 3. Agregar la lógica para mostrar el nuevo componente */}
       {vista === 'habilidades' && <GestionarHabilidades />}
       {vista === 'experiencia' && <GestionarExperiencia />}
       {vista === 'proyectos' && <GestionarProyectos />}
@@ -44,4 +42,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminPage;

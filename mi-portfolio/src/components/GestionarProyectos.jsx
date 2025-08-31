@@ -1,7 +1,7 @@
 // src/components/GestionarProyectos.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
-import adminStyles from './Admin.module.css';
+import { supabase } from '../services/supabaseClient';
+import adminStyles from '../pages/AdminPage.module.css';
 
 function GestionarProyectos() {
   const [proyectos, setProyectos] = useState([]);

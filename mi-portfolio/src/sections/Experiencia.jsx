@@ -1,6 +1,6 @@
 // src/components/Experiencia.jsx
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../services/supabaseClient';
 import styles from './Experiencia.module.css';
 
 function Experiencia() {
