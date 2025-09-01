@@ -9,12 +9,12 @@
 }
 
 .titulo {
-  font-size: 3rem; /* 48px */
-  font-weight: 800; /* extra-bold */
+  font-size: 3rem; 
+  font-weight: 800; 
   margin-bottom: 0.5rem;
 }
 
 .subtitulo {
-  font-size: 1.25rem; /* 20px */
-  color: var(--text-secondary); /* Un gris más claro */
+  font-size: 1.25rem; 
+  color: var(--text-secondary); 
 }

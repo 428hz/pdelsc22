@@ -1,10 +1,9 @@
-/* src/components/Habilidades.module.css */
 .habilidades {
-  /* Esta sección puede quedar vacía o tener un fondo si lo preferís */
+  
 }
 
 .lista {
-  list-style: none; /* Esto quita las viñetas */
+  list-style: none; 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 0.75rem;

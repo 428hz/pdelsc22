@@ -1,7 +1,6 @@
-// src/components/GestionarExperiencia.jsx
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import adminStyles from '../pages/AdminPage.module.css'; // 1. Importamos los estilos compartidos
+import adminStyles from '../pages/AdminPage.module.css'; 
 
 function GestionarExperiencia() {
   const [experiencias, setExperiencias] = useState([]);
@@ -76,12 +75,12 @@ function GestionarExperiencia() {
   return (
     <div>
       <h3>{editando ? 'editando experiencia' : 'agregar nueva experiencia'}</h3>
-      {/* 2. Aplicamos las clases a los formularios y listas */}
+      {}
       <form onSubmit={handleSubmit} className={adminStyles.form} style={{ flexDirection: 'column', alignItems: 'stretch' }}>
         <input type="text" placeholder="puesto" value={puesto} onChange={e => setPuesto(e.target.value)} className={adminStyles.input} />
         <input type="text" placeholder="empresa" value={empresa} onChange={e => setEmpresa(e.target.value)} className={adminStyles.input} />
         <textarea placeholder="descripción..." value={descripcion} onChange={e => setDescripcion(e.target.value)} className={adminStyles.input} />
-       <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}> {/* Nuevo div con estilos inline */}
+       <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}> {}
             <button type="submit" className={adminStyles.button}>{editando ? 'guardar cambios' : 'agregar'}</button>
             {editando && <button type="button" onClick={cancelarEdicion} className={adminStyles.button}>cancelar</button>}
         </div>

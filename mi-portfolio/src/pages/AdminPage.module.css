@@ -1,4 +1,3 @@
-/* src/components/Admin.module.css */
 .nav {
   margin: 2rem 0;
   border-bottom: 1px solid #3a3a3c;
@@ -74,7 +73,7 @@
 }
 
 .deleteButton:hover {
-  color: #ff453a; /* Rojo iOS */
+  color: #ff453a; 
 }
 
 .editButton:hover {

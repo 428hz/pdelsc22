@@ -1,15 +1,14 @@
-/* src/components/Header.module.css */
 .header {
   background-color: rgba(31, 41, 55, 0.8);
   backdrop-filter: blur(10px);
-  padding: 1rem; /* Menos padding en pantallas chicas */
+  padding: 1rem; 
   position: sticky;
   top: 0;
   z-index: 10;
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Permite que los elementos pasen a la línea de abajo */
+  flex-wrap: wrap; 
   justify-content: center;
   gap: 1rem;
 }
@@ -31,7 +30,7 @@
 
 .nav a {
   color: #d1d5db;
-  margin-left: 0; /* Quitamos el margen que ya no es necesario */
+  margin-left: 0; 
   font-weight: 500;
   text-decoration: none;
   position: relative;
@@ -76,11 +75,10 @@
   text-decoration: none;
 }
 
-/* --- Media Query para pantallas grandes --- */
-/* Cuando la pantalla tenga 768px de ancho o más, se aplican estos estilos */
+
 @media (min-width: 768px) {
   .header {
-    flex-wrap: nowrap; /* Volvemos a una sola línea */
+    flex-wrap: nowrap; 
     justify-content: space-between;
     padding: 1rem 2rem;
   }

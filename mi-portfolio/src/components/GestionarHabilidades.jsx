@@ -1,10 +1,8 @@
-// src/components/GestionarHabilidades.jsx
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import adminStyles from '../pages/AdminPage.module.css'; // Usamos los estilos compartidos
+import adminStyles from '../pages/AdminPage.module.css'; 
 
 function GestionarHabilidades() {
-  // ... toda tu lógica de estados y funciones (handleAdd, handleDelete, etc.) se queda igual
   const [habilidades, setHabilidades] = useState([]);
   const [nuevaHabilidad, setNuevaHabilidad] = useState('');
   const [loading, setLoading] = useState(true);

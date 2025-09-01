@@ -1,9 +1,7 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { supabase } from './services/supabaseClient'; // <- RUTA CORREGIDA
+import { supabase } from './services/supabaseClient'; 
 
-// Importaciones con las nuevas rutas
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import HomePage from './pages/HomePage';

@@ -22,19 +22,19 @@ body {
   line-height: 1.6;
 }
 
-/* 3. Regla global para minúsculas */
+
 h1, h2, h3, h4, h5, h6, p, a, li, button {
   text-transform: lowercase;
-  letter-spacing: 0.5px; /* Un pequeño extra para legibilidad */
+  letter-spacing: 0.5px; 
 }
 
 section {
-  padding: 3rem 1rem; /* Ajustamos el padding para móviles */
+  padding: 3rem 1rem; 
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Media query para pantallas más grandes */
+
 @media (min-width: 768px) {
   section {
     padding: 4rem 2rem;

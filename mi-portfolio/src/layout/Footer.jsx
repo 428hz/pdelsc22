@@ -6,7 +6,6 @@ function Footer() {
   const anioActual = new Date().getFullYear();
 
   return (
-    // APLICAMOS EL ID AQUÍ
     <footer id="contacto" className={styles.footer}>
       <div className={styles.footerContent}>
         <h3>contacto</h3>

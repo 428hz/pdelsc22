@@ -1,4 +1,3 @@
-// src/components/Proyectos.jsx
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
 import styles from './Proyectos.module.css';
@@ -26,7 +25,7 @@ function Proyectos() {
     <section id="proyectos">
       <h2 className={styles.sectionTitle}>mis proyectos</h2>
       <div className={styles.proyectosGrid}>
-        {/* LA CORRECCIÓN ESTÁ EN LA SIGUIENTE LÍNEA */}
+        {}
         {proyectos.map(proyecto => (
           <div key={proyecto.id} className={styles.card}>
             <h3>{proyecto.nombre}</h3>

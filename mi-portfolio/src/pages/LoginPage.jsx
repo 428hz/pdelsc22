@@ -1,8 +1,7 @@
-// src/pages/LoginPage.jsx
 import React, { useState } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { useNavigate } from 'react-router-dom';
-import styles from './LoginPage.module.css'; // <-- RUTA Y NOMBRE CORREGIDOS
+import styles from './LoginPage.module.css'; 
 
 function LoginPage() {
   const navigate = useNavigate();

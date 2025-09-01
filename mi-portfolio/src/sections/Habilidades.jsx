@@ -1,7 +1,6 @@
-// src/components/Habilidades.jsx
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import styles from './Habilidades.module.css'; // Importamos los estilos del módulo
+import styles from './Habilidades.module.css'; 
 import { motion } from 'framer-motion';
 
 function Habilidades() {
@@ -21,14 +20,14 @@ function Habilidades() {
     <section id="habilidades" className={styles.habilidades}>
       <h2>habilidades técnicas</h2>
       <motion.ul
-        className={styles.lista} // Aplicamos la clase para la grilla
+        className={styles.lista} 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
         {habilidades.map(habilidad => (
-          <li key={habilidad.nombre} className={styles.item}> {/* Aplicamos la clase para cada burbuja */}
+          <li key={habilidad.nombre} className={styles.item}> {}
             {habilidad.nombre}
           </li>
         ))}

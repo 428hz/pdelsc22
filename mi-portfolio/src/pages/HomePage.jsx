@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import React from 'react';
 import Inicio from '../sections/Inicio';
 import Habilidades from '../sections/Habilidades';
@@ -16,4 +15,4 @@ function HomePage() {
   );
 }
 
-export default HomePage; // <-- ¡ESTA LÍNEA ES LA QUE FALTA!
+export default HomePage; 

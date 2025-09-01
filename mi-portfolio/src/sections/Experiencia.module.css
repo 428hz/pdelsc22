@@ -1,11 +1,9 @@
-/* src/components/Experiencia.module.css */
 .timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* La línea del medio, que en móvil estará a la izquierda */
 .timeline::after {
   content: '';
   position: absolute;
@@ -13,7 +11,7 @@
   background-color: #374151;
   top: 0;
   bottom: 0;
-  left: 31px; /* La movemos a la izquierda */
+  left: 31px;
   margin-left: -3px;
 }
 
@@ -21,12 +19,11 @@
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
-  width: 100%; /* Ocupa todo el ancho en móvil */
-  padding-left: 70px; /* Hacemos espacio para la línea y los círculos */
+  width: 100%; 
+  padding-left: 70px; 
   padding-right: 25px;
 }
 
-/* Anulamos los posicionamientos de left/right */
 .left {
   left: 0;
 }
@@ -34,13 +31,12 @@
   left: 0;
 }
 
-/* Círculos en el timeline */
 .container::after {
   content: '';
   position: absolute;
   width: 25px;
   height: 25px;
-  left: 15px; /* Los posicionamos sobre la línea */
+  left: 15px; 
   background-color: white;
   border: 4px solid #38bdf8;
   top: 15px;
@@ -48,7 +44,6 @@
   z-index: 1;
 }
 
-/* Quitamos la flecha que apuntaba a la línea */
 .right::after {
   left: 15px;
 }
@@ -65,7 +60,6 @@
     background-color: var(--bubble-blue);
 }
 
-/* --- Media Query para volver al diseño de dos columnas en PC --- */
 @media (min-width: 768px) {
   .timeline::after {
     left: 50%;
@@ -85,7 +79,7 @@
   
   .container::after {
     right: -17px;
-    left: auto; /* Reseteamos el left */
+    left: auto; 
   }
 
   .right::after {

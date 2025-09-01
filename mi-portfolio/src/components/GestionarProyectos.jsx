@@ -1,4 +1,3 @@
-// src/components/GestionarProyectos.jsx
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
 import adminStyles from '../pages/AdminPage.module.css';
@@ -7,12 +6,10 @@ function GestionarProyectos() {
   const [proyectos, setProyectos] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  // Estados para el formulario
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
-  const [tecnologias, setTecnologias] = useState(''); // Se ingresa como texto separado por comas
+  const [tecnologias, setTecnologias] = useState(''); 
   
-  // Estados para la edición
   const [editando, setEditando] = useState(false);
   const [proyectoActualId, setProyectoActualId] = useState(null);
 
@@ -32,7 +29,6 @@ function GestionarProyectos() {
     e.preventDefault();
     if (!nombre) return;
     
-    // Convertimos el string de tecnologías en un array
     const tecnologiasArray = tecnologias.split(',').map(tech => tech.trim());
     const proyectoData = { nombre, descripcion, tecnologias: tecnologiasArray };
     let error;
@@ -56,7 +52,7 @@ function GestionarProyectos() {
     setProyectoActualId(pro.id);
     setNombre(pro.nombre);
     setDescripcion(pro.descripcion || '');
-    setTecnologias(pro.tecnologias.join(', ')); // Convertimos el array a un string para el input
+    setTecnologias(pro.tecnologias.join(', ')); 
   };
 
   const cancelarEdicion = () => {

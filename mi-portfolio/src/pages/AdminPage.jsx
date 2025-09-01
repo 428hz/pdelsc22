@@ -1,9 +1,8 @@
-// src/pages/AdminPage.jsx
 import React, { useState } from 'react';
 import GestionarHabilidades from '../components/GestionarHabilidades';
 import GestionarExperiencia from '../components/GestionarExperiencia';
 import GestionarProyectos from '../components/GestionarProyectos';
-import styles from './AdminPage.module.css'; // <-- RUTA Y NOMBRE CORREGIDOS
+import styles from './AdminPage.module.css'; 
 
 function AdminPage() {
   const [vista, setVista] = useState('habilidades');
