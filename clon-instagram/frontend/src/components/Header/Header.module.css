@@ -1,0 +1,80 @@
+.header {
+  background-color: #000000;
+  border-bottom: 1px solid #363636;
+  padding: 0 20px;
+  position: fixed; /* Lo dejamos fijo en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Nos aseguramos que esté por encima de otros elementos */
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 975px;
+  height: 60px;
+  margin: 0 auto; /* Centramos el contenido */
+}
+
+.logoContainer {
+  flex: 1 0 0;
+}
+
+.logo {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.searchContainer {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  background-color: #262626;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #a8a8a8;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.searchInput::placeholder {
+  color: #a8a8a8;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.navIcons {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  color: white;
+  font-size: 1.5rem; /* 24px */
+  cursor: pointer;
+}
+
+/* Reemplaza tu .profilePic existente con esto */
+.profilePic {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover; /* Asegura que la imagen llene el círculo sin deformarse */
+  border: 1px solid #555;
+  cursor: pointer;
+}

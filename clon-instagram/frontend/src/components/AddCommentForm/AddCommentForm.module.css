@@ -1,0 +1,33 @@
+/* src/components/AddCommentForm.module.css */
+.commentForm {
+  display: flex;
+  border-top: 1px solid #363636;
+  padding: 8px 16px;
+}
+
+.commentInput {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.commentInput:focus {
+  outline: none;
+}
+
+.submitButton {
+  background: none;
+  border: none;
+  color: #0095f6;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.submitButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

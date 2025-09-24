@@ -1,0 +1,66 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 90px 20px 0; /* Espacio para el header */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.notificationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #1e1e1e; /* Fondo ligeramente más claro que el principal */
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.notificationItem:hover {
+  background-color: #2a2a2a;
+}
+
+.unread {
+  background-color: #2c2c2e; /* Un color para destacar las no leídas */
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  margin: 0;
+}
+
+.actorUsername {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.actorUsername:hover {
+  text-decoration: underline;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.8rem;
+  color: #a8a8a8;
+  margin-top: 4px;
+}

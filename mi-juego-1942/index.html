@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Shooter Game</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="menu-screen" class="screen">
+      <h1>Space Shooter</h1>
+      <button id="one-player">1 Player</button>
+      <button id="two-players">2 Players</button>
+    </div>
+    <div id="game-screen" class="screen hidden">
+      <div id="canvas"></div> <!-- All game elements will be appended here -->
+      <div id="score-player1">Player 1: 0</div>
+      <div id="score-player2" class="hidden">Player 2: 0</div>
+    </div>
+    <div id="victory-screen" class="screen hidden">
+      <h1>VICTORY!</h1>
+      <button id="restart">Restart</button>
+      <button id="menu">Main Menu</button>
+    </div>
+    <div id="gameover-screen" class="screen hidden">
+      <h1>GAME OVER</h1>
+      <button id="restart">Restart</button>
+      <button id="menu">Main Menu</button>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

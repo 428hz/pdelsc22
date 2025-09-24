@@ -1,0 +1,149 @@
+.profileContainer {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 90px 20px 0; /* 60px del header + 30px de espacio */
+}
+
+.profileHeader {
+  display: flex;
+  margin-bottom: 44px;
+  align-items: center;
+}
+
+.profileImageContainer {
+  margin-right: 60px;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.usernameContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.username {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.editProfileButton {
+  background-color: #363636;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.editProfileButton:hover {
+  background-color: #4a4a4a;
+}
+
+.stats {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 40px;
+  font-size: 1rem;
+}
+
+.statCount {
+  font-weight: bold;
+}
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  border-top: 1px solid #363636;
+  padding-top: 40px;
+}
+
+.postItem {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Truco para mantener el aspect ratio 1:1 */
+}
+
+.postItem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.usernameContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.editProfileButton {
+  background-color: #363636;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.editProfileButton:hover {
+  background-color: #4a4a4a;
+}
+/* ...tu CSS existente... */
+
+/* Botón para SEGUIR (estilo principal, como el de Instagram) */
+.followButton {
+  background-color: #0095f6; /* Azul de Instagram */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.followButton:hover {
+  background-color: #1877f2; /* Un azul un poco más oscuro */
+}
+
+/* Botón para DEJAR DE SEGUIR (estilo secundario) */
+.unfollowButton {
+  background-color: #363636;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.unfollowButton:hover {
+  background-color: #4a4a4a;
+}

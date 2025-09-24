@@ -1,0 +1,134 @@
+/* Estilos generales y de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Contenedor principal de la aplicación */
+#app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- ESTILOS PARA MODO 1 JUGADOR --- */
+
+.single-player #info-panel {
+    width: 30%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1a1a1a;
+}
+
+.single-player #game-container {
+    width: 70%;
+    height: 100%;
+}
+
+.info-content h1 {
+    font-size: 3.5em;
+    color: #ff4500;
+    text-shadow: 3px 3px 0 #fff;
+    margin-bottom: 30px;
+}
+
+.info-content .description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.info-content h2 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff4500;
+    padding-bottom: 10px;
+}
+
+.controls-list {
+    list-style: none;
+    padding: 0;
+}
+
+.controls-list li {
+    font-size: 1em; /* Ajustado */
+    margin-bottom: 15px;
+}
+
+.controls-list li span {
+    display: inline-block;
+    width: 180px;
+    color: #00ff00;
+}
+
+/* --- ESTILOS PARA MODO 2 JUGADORES (PANTALLA COMPLETA) --- */
+
+.two-players #info-panel {
+    display: none; /* Ocultamos el panel */
+}
+
+.two-players #game-container {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- ESTILOS GENERALES DEL JUEGO --- */
+
+#game-container {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-canvas {
+    background-color: #00001a;
+    display: block;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s;
+}
+
+.start-options {
+    display: flex;
+    gap: 20px;
+}
+
+.game-overlay h1 { font-size: 3em; margin-bottom: 20px; text-shadow: 3px 3px 0 #ff0000; }
+.game-overlay p { font-size: 1.2em; margin-bottom: 40px; }
+.menu-button { font-family: 'Press Start 2P', cursive; font-size: 1.5em; padding: 15px 30px; border: 3px solid #fff; background-color: #333; color: #fff; cursor: pointer; border-radius: 8px; transition: all 0.2s ease; box-shadow: 0 5px 0 #ccc; }
+.menu-button:hover { background-color: #fff; color: #333; box-shadow: 0 5px 0 #999; }
+.menu-button:active { transform: translateY(3px); box-shadow: 0 2px 0 #999; }
+#start-screen { display: flex; }
+#game-over-screen { display: none; }

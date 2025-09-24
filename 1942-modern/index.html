@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1942 Modern</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div id="game-container">
+        </div>
+
+    <div id="start-menu" class="ui-overlay">
+        <h1>1942 Modern</h1>
+        <button id="start-1p">1 Jugador</button>
+        <button id="start-2p">2 Jugadores</button>
+    </div>
+
+    <div id="in-game-ui" class="hidden">
+        <div id="player1-score" class="score-display"></div>
+        <div id="player2-score" class="score-display"></div>
+    </div>
+
+    <div id="end-screen" class="ui-overlay hidden">
+        <h2 id="end-message"></h2>
+        <button id="restart-button">Reiniciar</button>
+        <button id="menu-button">Volver al Menú</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

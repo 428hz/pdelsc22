@@ -1,0 +1,155 @@
+.post {
+  width: 100%;
+  max-width: 614px;
+  background-color: #000000;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.profilePic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.deleteIcon {
+  margin-left: auto;
+}
+
+.postImageContainer {
+  width: 100%;
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.postActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.mainActions {
+  display: flex;
+  gap: 16px;
+}
+
+.actionIcon {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.liked {
+  color: #ff3040; /* Rojo de "me gusta" */
+}
+
+.postInfo {
+  padding: 0 16px 8px; /* Reducido el padding inferior para que el form quede más pegado */
+}
+
+.likes {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.usernameLink {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.commentsSection {
+  margin-top: 8px;
+}
+
+.toggleComments {
+  background: none;
+  border: none;
+  color: #a8a8a8;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comment {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 5px;
+}
+
+/* Estilos para el Toast de Confirmación */
+.confirmationToast {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.confirmationToast p {
+  font-weight: bold;
+}
+
+.toastButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.toastButton {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirmButton {
+  background-color: #ff3040;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #5a5a5a;
+  color: white;
+}

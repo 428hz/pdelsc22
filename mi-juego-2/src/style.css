@@ -1,0 +1,38 @@
+body{
+        background-color:black;
+}
+#container{
+    background: url('/background.jpg'); /* La ruta ahora es directa desde public */
+    width:1000px;
+    height:550px;
+    position: relative; /* Añadido para mejor posicionamiento de hijos */
+}
+#hero{
+    background: url('/1942.gif');
+    background-position: -85px -180px;
+    width:28px;
+    height:28px;
+    position:absolute;
+}
+.enemy1{
+    background: url('/1942.gif');
+    background-position: -30px -10px;
+    width:28px;
+    height:28px;
+    position:absolute;
+}
+.bullet{
+    background: url('/1942.gif');
+    background-position: -185px -400px;
+    width:18px;
+    height:18px;
+    position:absolute;
+}
+#score{
+    position:absolute;
+    top:20px;
+    left:800px;
+    color: white;
+    font-size:30px;
+    font-family: Arial;	
+}

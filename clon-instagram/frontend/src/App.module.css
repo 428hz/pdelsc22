@@ -1,0 +1,11 @@
+.container {
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e2e8f0;
+}
