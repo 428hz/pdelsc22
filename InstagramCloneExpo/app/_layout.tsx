@@ -1,36 +1,35 @@
-import { Tabs } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons'; // Importamos la librería de íconos
+import 'react-native-url-polyfill/auto';
+import { Stack, Redirect } from 'expo-router';
+import { AuthProvider, useAuth } from '../src/context/AuthContext';
 
-export default function TabLayout() {
+function Layout() {
+  const { session, loading } = useAuth();
+
+  // Mientras se verifica la sesión, no mostramos nada para evitar
+  // que se renderice una pantalla incorrecta. El AuthContext ya muestra
+  // el texto "Cargando sesión...".
+  if (loading) {
+    return null; 
+  }
+
+  // Si no hay sesión, redirigimos explícitamente a la pantalla de login.
+  if (!session) {
+    return <Redirect href="/login" />;
+  }
+
+  // Si hay sesión, mostramos el grupo de pestañas como la única opción.
+  // Esto le quita el control a Expo Router y evita que cree la barra inferior.
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: 'white', // Color del ícono activo
-        tabBarStyle: {
-          backgroundColor: '#000', // Fondo de la barra de pestañas
-          borderTopColor: '#363636',
-        },
-      }}
-    >
-      <Tabs.Screen 
-        name="index" 
-        options={{ 
-          title: 'Home',
-          headerShown: false, // Ocultamos el título de la cabecera aquí
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="home" size={24} color={color} />
-          ),
-        }} 
-      />
-      <Tabs.Screen 
-        name="explore" 
-        options={{ 
-          title: 'Explore',
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="search" size={24} color={color} />
-          ),
-        }} 
-      />
-    </Tabs>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <AuthProvider>
+      <Layout />
+    </AuthProvider>
   );
 }

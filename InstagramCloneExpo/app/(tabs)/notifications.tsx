@@ -4,6 +4,6 @@ export default function NotificationsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Pantalla de Notificaciones</Text>
-    </V>
+    </View> // <-- AQUÍ ESTABA EL ERROR
   );
 }
