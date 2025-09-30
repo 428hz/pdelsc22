@@ -1,38 +1,55 @@
 // app/(tabs)/_layout.tsx
-// Este es el configurador principal para tu barra de pestañas.
+// este archivo es el que le da forma a tu barra de pestañas el cerebro de la operación, digamos
 
-import React from 'react';
-import { Tabs } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react'
+// nos traemos el componente 'tabs' de expo-router, que es el que hace la magia
+import { Tabs } from 'expo-router'
+// y también importamos los íconos de ionicons, que vienen en el paquete de @expo/vector-icons
+// hay un montón de packs de íconos, pero estos son un clásico
+import { Ionicons } from '@expo/vector-icons'
 
 export default function TabLayout() {
   return (
-    // El componente <Tabs> envuelve la configuración de las pestañas.
+    // el componente <tabs> es el contenedor principal para toda la barra de navegación
     <Tabs
+      // 'screenoptions' nos deja definir estilos y comportamientos para todas las pestañas de una
+      // así no tenemos que repetir el código en cada una
       screenOptions={{
-        tabBarActiveTintColor: 'tomato', // Color para la pestaña activa
-        tabBarInactiveTintColor: 'gray', // Color para la pestaña inactiva
-        headerShown: false, // Ocultamos la cabecera
+        tabBarActiveTintColor: 'tomato', // el color que va a tener el ícono y texto de la pestaña que está seleccionada
+        tabBarInactiveTintColor: 'gray', // y este es el color para las que no están activas
+        headerShown: false, // con esto le decimos que no muestre la cabecera por defecto que trae el navegador de pestañas
+                              // lo hacemos porque seguramente cada pantalla ya maneja su propio título
       }}>
-      {/* Cada <Tabs.Screen> es una pestaña. El 'name' debe coincidir con el nombre del archivo. */}
+      // ahora definimos cada pestaña, una por una, con <tabs.screen>
+      
+      // === primera pestaña: inicio ===
       <Tabs.Screen
-        name="index" // Esto corresponde al archivo index.tsx
+        // el 'name' tiene que ser igual al nombre del archivo que querés que se muestre en esta pestaña
+        // en este caso, 'index' se corresponde con el archivo 'index.tsx'
+        name="index" 
         options={{
-          title: 'Inicio', // El texto que se mostrará en la pestaña
+          // 'options' nos deja personalizar esta pestaña en particular
+          title: 'inicio', // el texto que se va a ver debajo del ícono
+          // 'tabbaricon' es una función que define qué ícono mostrar
+          // recibe propiedades como 'color' y 'size' para que el ícono se adapte solo
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size} />
           ),
         }}
       />
+      
+      // === segunda pestaña: componentes ===
       <Tabs.Screen
-        name="styles" // Esto corresponde al archivo styles.tsx (que renombraste)
+        // esta pestaña va a cargar el contenido del archivo 'styles.tsx'
+        name="styles"
         options={{
-          title: 'Estilos',
+          title: 'componentes', // el texto que se va a ver debajo del ícono
           tabBarIcon: ({ color, size }) => (
+            // usamos otro ícono de la misma familia 'color-palette' queda pintado
             <Ionicons name="color-palette" color={color} size={size} />
           ),
         }}
       />
     </Tabs>
-  );
+  )
 }
