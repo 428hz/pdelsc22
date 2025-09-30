@@ -22,7 +22,8 @@ const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error("Supabase URL or Anon Key is missing in .env");
 }
-
+console.log("URL de Supabase leída:", supabaseUrl);
+console.log("Llave Anon de Supabase leída:", supabaseAnonKey ? "Cargada ✅" : "NO Cargada o Incorrecta ❌");  
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     // 2. Usamos una condición para elegir el almacenamiento correcto.

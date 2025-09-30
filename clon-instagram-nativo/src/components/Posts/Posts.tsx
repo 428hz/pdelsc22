@@ -203,7 +203,7 @@ export default function Post({ postData, onDelete }: PostProps) {
         </Link>
       </View>
 
-      <Image source={{ uri: postData.media_url }} style={styles.postImage} />
+      <Image source={{ uri: postData.media_url }} style={styles.postImage} resizeMode="cover" />
 
       <View style={styles.postActions}>
         <View style={styles.mainActions}>
@@ -292,10 +292,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
   },
-  postImage: {
-    width: '100%',
-    aspectRatio: 1,
-  },
+ postImage: {
+  width: '100%',
+  height: 470, // <-- Le damos una altura fija y razonable
+},
   postActions: {
     flexDirection: 'row',
     justifyContent: 'space-between',

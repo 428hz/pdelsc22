@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'; // 1. Importamos useCallback
 import { StyleSheet, View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { useFocusEffect } from 'expo-router'; // 2. Importamos useFocusEffect
-import Post from '@/components/Post/Post';
+import Post from '@/components/Posts/Posts';
 import { supabase } from '../../src/services/supabaseClient';
 
 type PostType = {
@@ -79,15 +79,16 @@ export default function HomePage() {
 }
 
 // Los estilos no cambian
+// REEMPLAZA TU STYLESHEET COMPLETO EN index.tsx CON ESTO
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container: { 
+    flex: 1, 
     backgroundColor: '#000',
   },
   feed: {
     width: '100%',
-    maxWidth: 614,
-    alignSelf: 'center',
+    maxWidth: 614, // El ancho correcto para el feed
+    alignSelf: 'center', // La instrucción para centrar el feed
     paddingTop: 10,
   },
   centered: {
